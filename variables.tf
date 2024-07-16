@@ -4,26 +4,11 @@ variable "aws_region" {
 }
 
 variable "vpc_name" {
-       description = "The AWS vpc to create." 
-       default     = "terra-jenkins-vpc" 
+  description = "Name for the VPC"
+  default     = "terra-jenkins-vpc"
 }
 
-variable "security_group" { 
-    description = "Name of security group" 
-    default     = "terra-jenkins-SG" 
-} 
-
-variable "instance_type" { 
-    description = "instance type for ec2" 
-    default     =  "t2.micro" 
-}
-
-variable "ami_id" { 
-    description = "AMI for Ubuntu Ec2 instance" 
-    default     = "ami-0ad21ae1d0696ad58" 
-}
-
-variable "tag_name" { 
-    description = "Tag Name of for Ec2 instance" 
-    default     = "terra-jenkins-ec2" 
+variable "vpc_cidr_block" {
+  description = "CIDR block for the VPC"
+  default     = "10.0.0.0/16"
 }
