@@ -2,11 +2,11 @@ provider "aws" {
   region = var.aws_region
 }
 
-resource "aws_instance" "foo" {
-  ami           = "ami-05fa00d4c63e32376" # us-west-2
-  instance_type = "t2.micro"
+resource "aws_instance" "mb-ec2" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
   tags = {
-      Name = "TF-Instance"
+      Name = var.ec2_name
   }
 }
 
